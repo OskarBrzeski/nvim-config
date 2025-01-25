@@ -166,7 +166,11 @@ return {
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
+        bashls = {
+          filetypes = { 'sh', '.bashrc', '.bash_aliases' },
+        },
         clangd = {
+          cmd = { 'clangd', '--background-index', '--clang-tidy', '--log=verbose' },
           filetypes = { 'c', 'h' },
         },
         gopls = {
@@ -175,11 +179,14 @@ return {
         rust_analyzer = {
           filetypes = { 'rs' },
         },
-        html = {
+        emmet_ls = {
           filetypes = { 'html' },
         },
-        templ = {
-          filetypes = { 'templ' },
+        htmx = {
+          filetypes = { 'html' },
+        },
+        pyright = {
+          filetypes = { 'py' },
         },
 
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -193,8 +200,8 @@ return {
 
         lua_ls = {
           -- cmd = {...},
-          -- filetypes = { ...},
           -- capabilities = {},
+          filetypes = { 'lua' },
           settings = {
             Lua = {
               completion = {
@@ -234,6 +241,8 @@ return {
             require('lspconfig')[server_name].setup(server)
           end,
         },
+        ensure_installed = ensure_installed,
+        automatic_installation = true,
       }
     end,
   },
