@@ -179,8 +179,8 @@ return {
         rust_analyzer = {
           filetypes = { 'rs' },
         },
-        emmet_ls = {
-          filetypes = { 'html' },
+        emmet_language_server = {
+          filetypes = { 'html', 'css' },
         },
         htmx = {
           filetypes = { 'html' },
@@ -225,10 +225,11 @@ return {
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
-      vim.list_extend(ensure_installed, {
+      local ensure_installed_stylua = vim.tbl_keys(servers or {})
+      vim.list_extend(ensure_installed_stylua, {
         'stylua', -- Used to format Lua code
       })
-      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+      require('mason-tool-installer').setup { ensure_installed = ensure_installed_stylua }
 
       require('mason-lspconfig').setup {
         handlers = {

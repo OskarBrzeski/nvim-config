@@ -22,12 +22,8 @@ return {
   opts = {
     workspaces = {
       {
-        name = 'LinuxStuff',
-        path = '~/vaults/LinuxStuff',
-      },
-      {
-        name = 'CodeNotes',
-        path = '~/vaults/CodeNotes',
+        name = 'Vault',
+        path = '~/code/ObsidianVault/',
       },
     },
     mappings = {
