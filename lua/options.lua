@@ -73,7 +73,7 @@ vim.o.cursorline = true
 vim.o.scrolloff = 6
 
 -- Add column to show how long lines are allowed to be
-vim.o.colorcolumn = '80'
+vim.o.colorcolumn = '81'
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
